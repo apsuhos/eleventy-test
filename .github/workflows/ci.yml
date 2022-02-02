@@ -42,7 +42,7 @@ jobs:
             - name: ZIP assets
               if: github.event_name == 'push' && github.ref == 'refs/heads/main'
               run: |
-                  zip -R dist.zip ./dist
+                  zip -r dist.zip ./dist
 
             - name: Create the release
               if: github.event_name == 'push' && github.ref == 'refs/heads/main'
