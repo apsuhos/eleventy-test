@@ -6,7 +6,8 @@
     "scripts": {
         "format:check": "prettier --check \"**/*.{js,css,html,scss,yaml,yml,json}\"",
         "format": "prettier --write \"**/*.{js,css,html,scss,yaml,yml,json}\"",
-        "start": "npx eleventy --serve"
+        "start": "npx eleventy --serve",
+        "build": "eleventy"
     },
     "keywords": [],
     "author": "",
