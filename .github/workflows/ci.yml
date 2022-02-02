@@ -32,6 +32,12 @@ jobs:
               if: github.event_name == 'push'
               run: npm run build
 
+            - name: Upload Build Folder
+              uses: actions/upload-artifact@v2
+              with:
+                  name: dist
+                  path: dist
+
             - name: Deploy to staging
               if: github.event_name == 'push'
               run: npx surge --project ./dist --domain holistic-snake.surge.sh
