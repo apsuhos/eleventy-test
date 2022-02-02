@@ -39,6 +39,11 @@ jobs:
                   name: dist
                   path: dist
 
+            - name: ZIP assets
+              if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+              run: |
+                  zip -R dist.zip ./dist
+
             - name: Create the release
               if: github.event_name == 'push' && github.ref == 'refs/heads/main'
               run: npx semantic-release
